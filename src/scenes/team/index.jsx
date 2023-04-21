@@ -6,6 +6,7 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import AddUser from "./addUser";
 
 const Team = () => {
   const theme = useTheme();
@@ -71,6 +72,7 @@ const Team = () => {
   return (
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Box m="40px 0 0 0"><AddUser/></Box>
       <Box
         m="40px 0 0 0"
         height="75vh"
