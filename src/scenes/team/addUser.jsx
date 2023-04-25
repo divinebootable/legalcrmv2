@@ -77,7 +77,7 @@ export default function AddUser() {
                   >
                     <div>
                       <TextField
-                        label="Size"
+                        label="firstname"
                         id="outlined-size-small"
                         defaultValue="Small"
                         size="small"
@@ -94,7 +94,7 @@ export default function AddUser() {
                   >
                     <div>
                       <TextField
-                        label="Size"
+                        label="lastname"
                         id="outlined-size-small"
                         defaultValue="Small"
                         size="small"
@@ -111,7 +111,7 @@ export default function AddUser() {
                   >
                     <div>
                       <TextField
-                        label="Size"
+                        label="email"
                         id="outlined-size-small"
                         defaultValue="Small"
                         size="small"
