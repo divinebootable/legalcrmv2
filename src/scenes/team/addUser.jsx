@@ -7,6 +7,31 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { tokens } from "../../theme";
 import TextField from "@mui/material/TextField";
+import MenuItem from '@mui/material/MenuItem';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+
+
+
+const roles =[
+{
+  value: 'Partners',
+  label: 'Partners',
+  
+},
+{
+  value: 'Lawyers',
+  label: 'Lawyers',
+},
+{
+  value: 'Assistant',
+  label: 'Assistant',
+  
+},
+{
+  value: 'Secretary',
+  label: 'Secretary',
+},
+];
 
 const style = {
   position: "absolute",
@@ -65,8 +90,8 @@ export default function AddUser() {
             <Box sx={{ width: "100%" }}>
               <Grid
                 container
-                rowSpacing={1}
-                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                spacing={3}
+               
               >
                 <Grid item xs={6}>
                   <Box
@@ -79,11 +104,12 @@ export default function AddUser() {
                       <TextField
                         label="firstname"
                         id="outlined-size-small"
-                        defaultValue="Small"
+                        defaultValue="FirstName"
                         size="small"
                       />
                     </div>
                   </Box>
+                  
                 </Grid>
                 <Grid item xs={6}>
                   <Box
@@ -96,7 +122,7 @@ export default function AddUser() {
                       <TextField
                         label="lastname"
                         id="outlined-size-small"
-                        defaultValue="Small"
+                        defaultValue="LastName"
                         size="small"
                       />
                     </div>
@@ -113,7 +139,7 @@ export default function AddUser() {
                       <TextField
                         label="email"
                         id="outlined-size-small"
-                        defaultValue="Small"
+                        defaultValue="Email"
                         size="small"
                       />
                     </div>
@@ -128,15 +154,94 @@ export default function AddUser() {
                   >
                     <div>
                       <TextField
-                        label="Size"
+                        label="phonenumber"
                         id="outlined-size-small"
-                        defaultValue="Small"
+                        defaultValue="Phone Number"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                 <Grid item xs={6}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="address"
+                        id="outlined-size-small"
+                        defaultValue="Address"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={6}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="gender"
+                        id="outlined-size-small"
+                        defaultValue="Gender"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={6}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Select"
+                        select
+                        id="outlined-size-small"
+                        defaultValue="Role"
+                        size="small"
+                        helperText="Select role"
+                      >
+                       {roles.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={6}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                         id="outlined-password-input"
+                         label="Password"
+                         type="password"
                         size="small"
                       />
                     </div>
                   </Box>
                 </Grid>
               </Grid>
+              <Button  variant="contained" endIcon={<SaveAltIcon />}>
+  Save
+</Button>
             </Box>
           </Typography>
         </Box>
