@@ -4,6 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+import AddContact from "./addContacts";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -58,6 +59,9 @@ const Contacts = () => {
         title="CONTACTS"
         subtitle="List of Contacts for Future Reference"
       />
+      <Box m="40px 0 0 0">
+        <AddContact />
+      </Box>
       <Box
         m="40px 0 0 0"
         height="75vh"

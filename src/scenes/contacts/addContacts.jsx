@@ -10,25 +10,6 @@ import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 
-const roles = [
-  {
-    value: "Partners",
-    label: "Partners",
-  },
-  {
-    value: "Lawyers",
-    label: "Lawyers",
-  },
-  {
-    value: "Assistant",
-    label: "Assistant",
-  },
-  {
-    value: "Secretary",
-    label: "Secretary",
-  },
-];
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -137,7 +118,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -146,15 +127,49 @@ export default function AddContact() {
                   >
                     <div>
                       <TextField
-                        label="phonenumber"
+                        label="profession"
                         id="outlined-size-small"
-                        defaultValue="Phone Number"
+                        defaultValue="Profession"
                         size="small"
                       />
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="outlined-country-input"
+                        label="Employer"
+                        defaultValue="Employer"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Phone"
+                        id="outlined-size-small"
+                        defaultValue="Phone"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -180,9 +195,9 @@ export default function AddContact() {
                   >
                     <div>
                       <TextField
-                        label="gender"
+                        label="id card Number"
                         id="outlined-size-small"
-                        defaultValue="Gender"
+                        defaultValue="Id Card Number"
                         size="small"
                       />
                     </div>
@@ -197,19 +212,11 @@ export default function AddContact() {
                   >
                     <div>
                       <TextField
-                        label="Select"
-                        select
-                        id="outlined-size-small"
-                        defaultValue="Role"
+                        id="outlined-city-input"
+                        label="city"
+                        defaultValue="City"
                         size="small"
-                        helperText="Select role"
-                      >
-                        {roles.map((option) => (
-                          <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                          </MenuItem>
-                        ))}
-                      </TextField>
+                      />
                     </div>
                   </Box>
                 </Grid>
@@ -222,10 +229,28 @@ export default function AddContact() {
                   >
                     <div>
                       <TextField
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
+                        id="outlined-country-input"
+                        label="country"
+                        defaultValue="Country"
                         size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="outlined-details-input"
+                        label="other details"
+                        defaultValue="Other Details"
+                        size="medium"
+                        type="textarea"
                       />
                     </div>
                   </Box>
