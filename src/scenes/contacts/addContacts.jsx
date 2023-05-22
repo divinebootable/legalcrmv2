@@ -60,14 +60,14 @@ export default function AddContact() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Box sx={{...style, width: 700}}>
+          <Typography id="modal-modal-title" variant="h4" component="h2">
             Add Contact
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Box sx={{ width: "100%" }}>
-              <Grid container spacing={3}>
-                <Grid item xs>
+              <Grid container rowSpacing={3} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -84,7 +84,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -101,7 +101,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -118,7 +118,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -135,7 +135,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -152,7 +152,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item>
+                <Grid xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -161,15 +161,15 @@ export default function AddContact() {
                   >
                     <div>
                       <TextField
+                        id="outlined-country-input"
                         label="Phone"
-                        id="outlined-size-small"
                         defaultValue="Phone"
                         size="small"
                       />
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -186,7 +186,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -203,7 +203,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -220,7 +220,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -237,7 +237,7 @@ export default function AddContact() {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2} sm={4} md={4}>
                   <Box
                     component="form"
                     sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
