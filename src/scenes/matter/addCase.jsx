@@ -57,7 +57,11 @@ export default function AddCase() {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Box>
-              <Grid></Grid>
+              <Grid
+                container
+                rowSpacing={3}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              ></Grid>
             </Box>
           </Typography>
         </Box>
