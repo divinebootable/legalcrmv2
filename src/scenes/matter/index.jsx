@@ -4,6 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+import AddCase from "./addCase";
 
 const Matter = () => {
   const theme = useTheme();
@@ -55,6 +56,9 @@ const Matter = () => {
   return (
     <Box m="20px">
       <Header title="MATTER" subtitle="Matter List" />
+      <Box m="40px 0 0 0">
+        <AddCase />
+      </Box>
       <Box
         m="40px 0 0 0"
         height="75vh"

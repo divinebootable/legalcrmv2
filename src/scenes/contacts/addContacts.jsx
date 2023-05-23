@@ -60,7 +60,7 @@ export default function AddContact() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={{...style, width: 700}}>
+        <Box sx={{ ...style, width: 700 }}>
           <Typography id="modal-modal-title" variant="h4" component="h2">
             Add Contact
           </Typography>

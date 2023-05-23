@@ -55,7 +55,11 @@ export default function AddCase() {
           <Typography id="modal-modal-title" variant="h4" component="h2">
             Add Contact
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}></Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Box>
+              <Grid></Grid>
+            </Box>
+          </Typography>
         </Box>
       </Modal>
     </div>
