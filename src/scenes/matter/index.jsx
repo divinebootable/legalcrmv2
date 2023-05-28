@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Box, Tab, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { tokens } from "../../theme";
 import { useTheme } from "@mui/material";
+import Matter from "./courtCase/index";
 
 const Case = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -12,8 +13,13 @@ const Case = () => {
   return (
     <Box>
       <Box>
-        <Tabs value={tabIndex} onChange={handleTabChange}>
-          <Tab label="Category" />
+        <Tabs
+          value={tabIndex}
+          onChange={handleTabChange}
+          textColor="secondary"
+          indicatorColor="secondary"
+        >
+          <Tab label="Case Category" />
           <Tab label="Court Case" />
           <Tab label="Settlement" />
         </Tabs>
@@ -26,7 +32,7 @@ const Case = () => {
         )}
         {tabIndex === 1 && (
           <Box>
-            <Typography>The second tab</Typography>
+            <Matter />
           </Box>
         )}
         {tabIndex === 2 && (

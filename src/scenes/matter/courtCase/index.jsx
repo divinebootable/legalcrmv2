@@ -55,7 +55,7 @@ const Matter = () => {
 
   return (
     <Box m="20px">
-      <Header title="MATTER" subtitle="Matter List" />
+      <Header title="Case" subtitle="Case List" />
       <Box m="40px 0 0 0">
         <AddCase />
       </Box>
