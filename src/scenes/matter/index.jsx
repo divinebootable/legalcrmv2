@@ -3,6 +3,8 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { tokens } from "../../theme";
 import { useTheme } from "@mui/material";
 import Matter from "./courtCase/index";
+import Category from "./caseCategory/index";
+import Settled from "./settledCase/index";
 
 const Case = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -27,7 +29,7 @@ const Case = () => {
       <Box sx={{ padding: 2 }}>
         {tabIndex === 0 && (
           <Box>
-            <Typography>The first tab</Typography>
+            <Category />
           </Box>
         )}
         {tabIndex === 1 && (
@@ -37,7 +39,7 @@ const Case = () => {
         )}
         {tabIndex === 2 && (
           <Box>
-            <Typography>The third tab</Typography>
+            <Settled />
           </Box>
         )}
       </Box>
