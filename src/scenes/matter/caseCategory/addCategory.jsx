@@ -57,11 +57,28 @@ export default function AddCategory() {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Box>
-              <Grid
-                container
-                rowSpacing={3}
-                columns={{ xs: 4, sm: 8, md: 12 }}
-              ></Grid>
+              <Grid container rowSpacing={3} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="category"
+                        id="outlined-size-small"
+                        defaultValue="Category Name"
+                        size="medium"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+              </Grid>
+              <Button variant="contained" endIcon={<SaveAltIcon />}>
+                Save
+              </Button>
             </Box>
           </Typography>
         </Box>
