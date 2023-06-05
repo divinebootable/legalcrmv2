@@ -224,13 +224,13 @@ export default function AddCase() {
                 <Grid xs={2} sm={4} md={4}>
                   <Box
                     component="form"
-                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch", pt:4 } }}
                     noValidate
                     autoComplete="off"
                   >
                     <div>
                       <TextField
-                        id="outlined-country-input"
+                        id="outlined-size-small"
                         label="Case Name"
                         defaultValue="Case Name"
                         name="case_name"
@@ -304,9 +304,8 @@ export default function AddCase() {
                       <TextField
                         id="date"
                         label="Open Date"
-                        defaultValue="Date"
                         name="open_date"
-                        type="date"
+                        type="text"
                         size="small"
                       />
                     </div>
@@ -326,7 +325,7 @@ export default function AddCase() {
                         defaultValue="Ajourned date"
                         name="ajourned_date"
                         size="small"
-                        type="date"
+                        type="text"
                       />
                     </div>
                   </Box>
@@ -345,7 +344,7 @@ export default function AddCase() {
                         defaultValue="Closed date"
                         name="close_date"
                         size="small"
-                        type="date"
+                        type="text"
                       />
                     </div>
                   </Box>

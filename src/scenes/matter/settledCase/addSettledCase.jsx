@@ -31,6 +31,7 @@ export default function AddSettledCase() {
 
   return (
     <div>
+       <div>
       <Box
         width="30%"
         p="5px"
@@ -42,7 +43,7 @@ export default function AddSettledCase() {
         onClick={handleOpen}
       >
         <Typography variant="h5" color={colors.greenAccent[400]}>
-          Add Settled Case
+          Add Settlements
         </Typography>
       </Box>
       <Modal
@@ -53,19 +54,296 @@ export default function AddSettledCase() {
       >
         <Box sx={{ ...style, width: 700 }}>
           <Typography id="modal-modal-title" variant="h4" component="h2">
-            Add Case
+            Add Settlements
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <Box>
-              <Grid
-                container
-                rowSpacing={3}
-                columns={{ xs: 4, sm: 8, md: 12 }}
-              ></Grid>
+            <Box sx={{ width: "100%" }}>
+              <Grid container rowSpacing={3} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Reference Number"
+                        id="outlined-size-small"
+                        defaultValue="FirstName"
+                        name="case_ref_number"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Category"
+                        id="outlined-size-small"
+                        defaultValue="Category"
+                        name="category"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Case Description"
+                        id="casedescription"
+                        defaultValue="Case Description"
+                        name="case_description"
+                        size="large"
+                        type="textArea"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="client"
+                        id="outlined-size-small"
+                        defaultValue="Client"
+                        name="client"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Expert"
+                        id="outlined-size-small"
+                        defaultValue="Expert"
+                        name="expert"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="outlined-country-input"
+                        label="Location"
+                        defaultValue="Location"
+                        name="location"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch", pt:4 } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="outlined-size-small"
+                        label="Case Name"
+                        defaultValue="Case Name"
+                        name="case_name"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Case Fee"
+                        id="outlined-size-small"
+                        defaultValue="Case Fee"
+                        name="case_fee"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        label="Against"
+                        id="outlined-size-small"
+                        defaultValue="Against"
+                        name="non_client"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="date"
+                        label="Open Date"
+                        name="open_date"
+                        type="text"
+                        size="small"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="AjournedDate"
+                        label="Ajourned Date"
+                        defaultValue="Ajourned date"
+                        name="ajourned_date"
+                        size="small"
+                        type="text"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="ClosedDate"
+                        label="Closed Date"
+                        defaultValue="Closed date"
+                        name="close_date"
+                        size="small"
+                        type="text"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="Status"
+                        label="Status"
+                        defaultValue="status"
+                        name="status"
+                        size="small"
+                        type="select"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="Observation"
+                        label="Observations"
+                        defaultValue="Observations"
+                        name="case_description"
+                        size="medium"
+                        type="textArea"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={4} md={4}>
+                  <Box
+                    component="form"
+                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        id="remarks"
+                        label="Remarks"
+                        defaultValue="Remarks"
+                        name="remark"
+                        size="medium"
+                        type="textArea"
+                      />
+                    </div>
+                  </Box>
+                </Grid>
+              </Grid>
+              <Button variant="contained" endIcon={<SaveAltIcon />}>
+                Save
+              </Button>
             </Box>
           </Typography>
         </Box>
       </Modal>
     </div>
+   </div>
   );
 }
