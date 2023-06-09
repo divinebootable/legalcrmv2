@@ -76,9 +76,9 @@ export const addTask = (props) => {
                   >
                     <div>
                       <TextField
-                        label="firstname"
+                        label="subject"
                         id="outlined-size-small"
-                        defaultValue="FirstName"
+                        defaultValue="Subject"
                         size="small"
                       />
                     </div>
@@ -93,9 +93,9 @@ export const addTask = (props) => {
                   >
                     <div>
                       <TextField
-                        label="lastname"
+                        label="Due date"
                         id="outlined-size-small"
-                        defaultValue="LastName"
+                        defaultValue="Duedate"
                         size="small"
                       />
                     </div>
