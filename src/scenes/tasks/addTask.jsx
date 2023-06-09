@@ -110,9 +110,9 @@ export const addTask = (props) => {
                   >
                     <div>
                       <TextField
-                        label="email"
+                        label="status"
                         id="outlined-size-small"
-                        defaultValue="Email"
+                        defaultValue="Status"
                         size="small"
                       />
                     </div>
@@ -127,9 +127,9 @@ export const addTask = (props) => {
                   >
                     <div>
                       <TextField
-                        label="phonenumber"
+                        label="description"
                         id="outlined-size-small"
-                        defaultValue="Phone Number"
+                        defaultValue="Description"
                         size="small"
                       />
                     </div>
