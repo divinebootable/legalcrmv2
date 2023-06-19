@@ -380,7 +380,7 @@ export default function AddCase() {
                         id="Observation"
                         label="Observations"
                         defaultValue="Observations"
-                        name="case_description"
+                        name="case_observation"
                         size="medium"
                         type="textArea"
                       />
