@@ -34,6 +34,8 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+   
+    
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -103,11 +105,11 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
+                  name="phone"
+                  label="Phone number"
+                  type="tel"
+                  id="phonenumber"
+                  autoComplete="phone number"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -125,7 +127,7 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Get Started
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
