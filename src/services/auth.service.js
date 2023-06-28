@@ -28,3 +28,23 @@ const login = (email, password) => {
       console.log(e);
     });
 };
+
+const logout = () => {
+  localStorage.removeItem(user);
+  return axios.post(API_URL + "SIGNOUT").then((response) => {
+    return response.data;
+  });
+};
+
+const getCurrentuser = () => {
+  return JSON.parse(localStorage.getItem("user"));
+};
+
+const AuthService = {
+  register,
+  login,
+  logout,
+  getCurrentuser,
+};
+
+export default AuthService;
