@@ -1,19 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { setMessage } from "./messageSlice";
+import AuthService from "../../services/auth.service";
 
-export const authSlice = createSlice({
-  name: "isLoggedIn",
-  initialState: {
-    value: true,
-  },
-  reducers: {
-    loggedIn: (state) => {
-      state.value = !state.value;
-    },
-    loggedOut: (state) => {
-      state.value = !state.value;
-    },
-  },
-});
-
-export const { loggedIn, loggedOut } = authSlice.actions;
-export default authSlice.reducer;
+const user = JSON.parse(localStorage.getItem("user"));
