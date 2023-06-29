@@ -83,13 +83,15 @@ export default function SignUp() {
       .required("This field is required"),
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const handleSubmit = (formValue) => {
+    const { account_name, email, law_firm, phone } = formValue;
+    setSuccessfull(false);
+    dispatch(register({ account_name, email, law_firm, phone }))
+      .unwrap()
+      .then(() => setSuccessfull(true))
+      .catch(() => {
+        setSuccessfull(false);
+      });
   };
 
   return (
