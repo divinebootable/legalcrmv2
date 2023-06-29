@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authSlice from "../features/authentication/authSlice";
+import authReducer from "../features/authentication/authSlice";
+import messageReducer from "../features/authentication/messageSlice";
 
-export default configureStore({
-  reducer: {
-    isLoggedIn: authSlice,
-  },
+const rootReducer = {
+  auth: authReducer,
+  messages: messageReducer,
+};
+
+export const store = configureStore({
+  reducer: rootReducer,
+  devTools: true,
 });
