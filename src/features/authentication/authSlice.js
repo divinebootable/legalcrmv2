@@ -23,3 +23,30 @@ export const register = createAsyncThunk(
     }
   }
 );
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async ({ email, password }, thunkAPI) => {
+    try {
+      const data = await AuthService.login(email, password);
+      return { user: data };
+    } catch (e) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      thunkAPI.dispatch(setMessage(message));
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+export const logout = createAsyncThunk("auth/logout", async () => {
+  await AuthService.logout();
+});
+
+const initiaState = user
+  ? { isLoggedIn: true, user }
+  : { isLoggedIn: false, user: null };
