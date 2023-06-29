@@ -1,4 +1,7 @@
 import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as Yup from "yup";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,6 +15,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import { register } from "../../../features/authentication/authSlice";
+import { clearMessage } from "../../../features/authentication/messageSlice";
 
 function Copyright(props) {
   return (
@@ -34,8 +40,49 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-   
-    
+  const [successful, setSuccessfull] = useState(false);
+  const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(clearMessage());
+  }, [dispatch]);
+
+  const initialState = {
+    account_name: "",
+    email: "",
+    law_firm: "",
+    phone: "",
+  };
+
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+  const validationSchema = Yup.object().shape({
+    account_name: Yup.string()
+      .test(
+        "len",
+        "The account_name must be between 3 and 20 characters.",
+        (val) =>
+          val && val.toString().length >= 3 && val.toString().length <= 20
+      )
+      .required("This field is required"),
+    email: Yup.string()
+      .email("This is not a valid email.")
+      .required("This field is required"),
+    law_firm: Yup.string()
+      .test(
+        "len",
+        "The law_name must be between 3 and 20 characters.",
+        (val) =>
+          val && val.toString().length >= 3 && val.toString().length <= 20
+      )
+      .required("This field is required"),
+    phone: Yup.string()
+      .matches(phoneRegExp, "Phone number is not valid")
+      .required("This field is required"),
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
