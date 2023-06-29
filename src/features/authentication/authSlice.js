@@ -47,6 +47,34 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   await AuthService.logout();
 });
 
-const initiaState = user
+const initialState = user
   ? { isLoggedIn: true, user }
+  : { user: "" }
+  ? { isLoading: false }
   : { isLoggedIn: false, user: null };
+
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  extraReducers: {
+    [register.fulfilled]: (state, action) => {
+      state.isLoggedIn = false;
+    },
+    [register.rejected]: (state, action) => {
+      state.isLoggedIn = false;
+    },
+    [login.fulfilled]: (state, action) => {
+      state.isLoggedIn = true;
+      state.user = action.payload.user;
+    },
+    [login.pending]: (state, action) => {
+      state.isLoading = true;
+      state.user = "";
+    },
+    [login.rejected]: (state, action) => {
+      state.isLoggedIn = false;
+      state.user = null;
+    },
+    [logout.fulfilled]: (state, action) => {},
+  },
+});
