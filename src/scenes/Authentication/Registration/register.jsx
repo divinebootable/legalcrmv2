@@ -173,7 +173,19 @@ export default function SignUp() {
                             id="email"
                             label="Email Address"
                             name="email"
+                            type="email"
+                            className={
+                              "form-control" +
+                              (errors.email && touched.email
+                                ? " is-invalid"
+                                : "")
+                            }
                             autoComplete="email"
+                          />
+                          <ErrorMessage
+                            name="email"
+                            component="div"
+                            className="invalid-feedback"
                           />
                         </Grid>
                         <Grid item xs={12}>
@@ -185,6 +197,17 @@ export default function SignUp() {
                             type="tel"
                             id="phonenumber"
                             autoComplete="phone number"
+                            className={
+                              "form-control" +
+                              (errors.phone && touched.phone
+                                ? " is-invalid"
+                                : "")
+                            }
+                          />
+                          <ErrorMessage
+                            name="email"
+                            component="div"
+                            className="invalid-feedback"
                           />
                         </Grid>
                         <Grid item xs={12}>
