@@ -1,7 +1,7 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -41,14 +41,14 @@ const theme = createTheme();
 
 export default function SignUp() {
   const [successful, setSuccessfull] = useState(false);
-  const { message } = useSelector((state) => state.message);
+  // const message = useSelector((state) => state.message);
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(clearMessage());
   }, [dispatch]);
 
-  const initialState = {
+  const initialValues = {
     account_name: "",
     email: "",
     law_firm: "",
@@ -85,6 +85,7 @@ export default function SignUp() {
 
   const handleSubmit = (formValue) => {
     const { account_name, email, law_firm, phone } = formValue;
+    console.log(account_name + "yeah" + email + law_firm + phone);
     setSuccessfull(false);
     dispatch(register({ account_name, email, law_firm, phone }))
       .unwrap()
@@ -118,32 +119,45 @@ export default function SignUp() {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({ errors, touched }) => (
+              {({
+                values,
+                errors,
+                touched,
+                handleBlur,
+                handleChange,
+                handleSubmit,
+              }) => (
                 <Form>
                   {!successful && (
                     <div>
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                          <TextField
-                            className={
-                              "form-control" +
-                              (errors.account_name && touched.account_name
-                                ? "is-invalid"
-                                : "")
-                            }
-                            autoComplete="given-name"
-                            name="account_name"
-                            required
-                            fullWidth
-                            id="AccountName"
-                            label="Account Name"
-                            autoFocus
-                          />
-                          <ErrorMessage
-                            name="account_name"
-                            component="grid"
-                            className="invalid-feedback"
-                          />
+                          <div>
+                            <TextField
+                              className={
+                                "form-control" +
+                                (errors.account_name && touched.account_name
+                                  ? "is-invalid"
+                                  : "")
+                              }
+                              autoComplete="given-name"
+                              name="account_name"
+                              value={values.account_name}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              error={
+                                !!touched.account_name && !!errors.account_name
+                              }
+                              helperText={
+                                touched.account_name && errors.account_name
+                              }
+                              required
+                              fullWidth
+                              id="AccountName"
+                              label="Account Name"
+                              autoFocus
+                            />
+                          </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                           <TextField
@@ -158,12 +172,12 @@ export default function SignUp() {
                             id="lawfirm"
                             label="Law Firm"
                             name="law_firm"
+                            value={values.law_firm}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={!!touched.law_firm && !!errors.law_firm}
+                            helperText={touched.law_firm && errors.law_firm}
                             autoComplete="law firm"
-                          />
-                          <ErrorMessage
-                            name="law_firm"
-                            component="grid"
-                            className="invalid-feedback"
                           />
                         </Grid>
                         <Grid item xs={12}>
@@ -173,6 +187,11 @@ export default function SignUp() {
                             id="email"
                             label="Email Address"
                             name="email"
+                            value={values.email}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={!!touched.email && !!errors.email}
+                            helperText={touched.email && errors.email}
                             type="email"
                             className={
                               "form-control" +
@@ -182,17 +201,17 @@ export default function SignUp() {
                             }
                             autoComplete="email"
                           />
-                          <ErrorMessage
-                            name="email"
-                            component="div"
-                            className="invalid-feedback"
-                          />
                         </Grid>
                         <Grid item xs={12}>
                           <TextField
                             required
                             fullWidth
                             name="phone"
+                            value={values.phone}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            error={!!touched.phone && !!errors.phone}
+                            helperText={touched.phone && errors.phone}
                             label="Phone number"
                             type="tel"
                             id="phonenumber"
@@ -203,11 +222,6 @@ export default function SignUp() {
                                 ? " is-invalid"
                                 : "")
                             }
-                          />
-                          <ErrorMessage
-                            name="email"
-                            component="div"
-                            className="invalid-feedback"
                           />
                         </Grid>
                         <Grid item xs={12}>

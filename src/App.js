@@ -28,7 +28,7 @@ function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
   //const [isLoggedIn, SetIsLoggedIn] = useState(false);
-  const isLoggedIn = useSelector((state) => state.isLoggedIn.value);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   console.log(isLoggedIn + "ok");
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Typography, Box, useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -31,8 +31,8 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export const addTask = (props) => {
-  const [open, setOpen] = React.useState(false);
+export const AddTask = (props) => {
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
@@ -169,31 +169,7 @@ export const addTask = (props) => {
                     </div>
                   </Box>
                 </Grid>
-                <Grid item xs={6}>
-                  <Box
-                    component="form"
-                    sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <div>
-                      <TextField
-                        label="Select"
-                        select
-                        id="outlined-size-small"
-                        defaultValue="Role"
-                        size="small"
-                        helperText="Select role"
-                      >
-                        {roles.map((option) => (
-                          <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                          </MenuItem>
-                        ))}
-                      </TextField>
-                    </div>
-                  </Box>
-                </Grid>
+            // roles text and grid here
                 <Grid item xs={6}>
                   <Box
                     component="form"
@@ -227,4 +203,4 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(addTask);
+export default connect(mapStateToProps, mapDispatchToProps)(AddTask);

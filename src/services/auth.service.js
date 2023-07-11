@@ -30,7 +30,7 @@ const login = (email, password) => {
 };
 
 const logout = () => {
-  localStorage.removeItem(user);
+  //localStorage.removeItem(user);
   return axios.post(API_URL + "SIGNOUT").then((response) => {
     return response.data;
   });
